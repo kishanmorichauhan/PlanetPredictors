@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "301805329095",
+    "project_id": "planetpredictor",
+    "storage_bucket": "planetpredictor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301805329095:android:00039dee13e5d2935b3ce2",
+        "android_client_info": {
+          "package_name": "com.droid7technolabs.planetpredictor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301805329095-6191gb33dcgn12ss2vbcgigg62gmdflp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.droid7technolabs.planetpredictor",
+            "certificate_hash": "a5f4d0e64c1810226fdff49e78172b2e2dba4d16"
+          }
+        },
+        {
+          "client_id": "301805329095-31mf0mlk3c1kpi8g37qgop17jea7pc7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy-yj2UNaV3HzxHn9twBtFV35QoirYs1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301805329095-31mf0mlk3c1kpi8g37qgop17jea7pc7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

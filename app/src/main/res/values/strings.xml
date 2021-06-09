@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PlanetPredictor</string>
+
+    <!-- Strings for On Boarding Screen -->
+
+    <!--Titles-->
+    <string name="first_slide_title">Team of astrologers</string>
+    <string name="second_slide_title">Ask a question</string>
+    <string name="third_slide_title">Get your Answers</string>
+
+    <!--Descriptions-->
+    <string name="first_slide_desc">We are a team of authentic Vedic astrologers from India</string>
+    <string name="second_slide_desc">Ask your queries to a team of astrologers</string>
+    <string name="third_slide_desc">We are right here to answer your queries</string>
+
+    <!--Buttons-->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">"Let's Begin"</string>
+</resources>
