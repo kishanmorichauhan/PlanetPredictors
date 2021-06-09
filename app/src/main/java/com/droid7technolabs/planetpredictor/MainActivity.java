@@ -31,10 +31,12 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.sql.Time;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -84,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         mtoolbar=findViewById(R.id.toolbar);
         //setSupportActionBar(mtoolbar);
 
-
         database.getReference().child("chats")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -108,10 +109,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String messageTxt = binding.messageBox.getText().toString();
-                SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm a");
+               // Date dateFormat = Calendar.getInstance().getTime();
+                DateFormat df = new SimpleDateFormat("h:mm a");
+                String date1 = df.format(Calendar.getInstance().getTime());
                 Date date = new Date();
-                Messages message = new Messages(messageTxt, senderUid, date.getTime(),dateFormat.toPattern());
+                Messages message = new Messages(messageTxt, senderUid, date.getTime(),date1);
                 binding.messageBox.setText("");
+
                 database.getReference().child("chats")
                         .push()
                         .setValue(message);

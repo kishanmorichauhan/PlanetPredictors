@@ -50,7 +50,7 @@ public class MessagesAdapter extends RecyclerView.Adapter {
         {
             SenderViewHolder viewHolder=(SenderViewHolder)holder;
             viewHolder.textViewmessaage.setText(messages.getMessage());
-           // viewHolder.timeofmessage.setText(messages.getCurrenttime());
+            viewHolder.timeofmessage.setText(messages.getCurrenttime());
         }
         else
         {
