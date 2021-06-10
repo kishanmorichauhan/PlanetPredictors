@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.droid7technolabs.planetpredictor.MainActivity;
+import com.droid7technolabs.planetpredictor.PaymentActivity;
 import com.droid7technolabs.planetpredictor.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;

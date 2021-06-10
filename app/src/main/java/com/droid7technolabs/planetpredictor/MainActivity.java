@@ -43,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
+    int counter = 0;
+    String sAmount = "295";
+    int amount = Math.round(Float.parseFloat(sAmount)*100);
+
     //TabLayout tabLayout;
     //TabItem mchat,mcall,mstatus;
     //ViewPager viewPager;
@@ -63,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        counter = preconfig.loadTotalFromPref(this);
 
 
         senderUid = FirebaseAuth.getInstance().getUid();
@@ -108,24 +114,32 @@ public class MainActivity extends AppCompatActivity {
         binding.sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String messageTxt = binding.messageBox.getText().toString();
-               // Date dateFormat = Calendar.getInstance().getTime();
-                DateFormat df = new SimpleDateFormat("h:mm a");
-                String date1 = df.format(Calendar.getInstance().getTime());
-                Date date = new Date();
-                Messages message = new Messages(messageTxt, senderUid, date.getTime(),date1);
-                binding.messageBox.setText("");
+                counter++;
+               preconfig.saveTotalInPref(getApplicationContext(),counter);
+                if (counter >= 2) {
+                    openDiloge();
+                    binding.sendBtn.setEnabled(false);
+                }else {
+                    String messageTxt = binding.messageBox.getText().toString();
+                    // Date dateFormat = Calendar.getInstance().getTime();
+                    DateFormat df = new SimpleDateFormat("h:mm a");
+                    String date1 = df.format(Calendar.getInstance().getTime());
+                    Date date = new Date();
+                    Messages message = new Messages(messageTxt, senderUid, date.getTime(), date1);
+                    binding.messageBox.setText("");
 
-                database.getReference().child("chats")
-                        .push()
-                        .setValue(message);
+                    database.getReference().child("chats")
+                            .push()
+                            .setValue(message);
+                }
             }
         });
-
-
-
     }
 
+    public void openDiloge(){
+        Dialoge  exampleDialog = new Dialoge(binding.sendBtn.getContext());
+        exampleDialog.show(getSupportFragmentManager(),"example dialoge");
+    }
     @Override
     protected void onStop() {
         super.onStop();
