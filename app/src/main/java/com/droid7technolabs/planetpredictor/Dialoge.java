@@ -43,7 +43,7 @@ public class Dialoge extends AppCompatDialogFragment {
 
 
         builder.setView(view)
-                .setTitle("Payment")
+                .setTitle("")
                 .setNegativeButton("cancle", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
