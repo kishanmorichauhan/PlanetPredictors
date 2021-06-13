@@ -1,2 +1,3 @@
+include ':adminapp'
 include ':app'
 rootProject.name = "PlanetPredictor"

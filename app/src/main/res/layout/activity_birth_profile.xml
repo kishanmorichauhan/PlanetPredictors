@@ -7,43 +7,180 @@
     android:layout_height="match_parent"
     tools:context=".UserDetails.BirthProfileActivity">
 
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Birth Profile"
+        android:textColor="@color/blue"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Fill in your details to get all astrological features"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1"
+        tools:ignore="MissingConstraints" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_img"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/profile_image"
-        app:civ_border_color="#FF000000"
+        app:civ_border_color="@color/blue"
         app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv2" />
 
     <EditText
         android:id="@+id/full_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="237dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/input_b2"
+        android:backgroundTint="#f0f0f0"
+        android:drawablePadding="10dp"
         android:ems="10"
+        android:hint="Enter full name"
         android:inputType="textPersonName"
-        android:hint=" Full Name"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_img"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profile_img" />
+        app:layout_constraintHorizontal_bias="0.324"
+        app:layout_constraintStart_toEndOf="@+id/profile_img"
+        app:layout_constraintTop_toBottomOf="@+id/tv2" />
 
     <TextView
         android:id="@+id/date"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:background="@android:drawable/editbox_background"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/border"
         android:drawableTop="@drawable/ic_baseline_date_range_24"
-        android:text="Select Date"
-        android:textSize="20sp"
+        android:text="DOB"
+        android:textAlignment="center"
+        android:textColor="#47484A"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.689"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+        app:layout_constraintTop_toBottomOf="@+id/full_name" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/border"
+        android:drawableTop="@drawable/ic_baseline_access_time_24"
+        android:text="Birth Time"
+        android:textAlignment="center"
+        android:textColor="#47484A"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toEndOf="@+id/date"
+        app:layout_constraintTop_toBottomOf="@+id/full_name" />
+
+    <LinearLayout
+        android:id="@+id/lineargender"
+        android:layout_width="361dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Gender"
+            android:textColor="#47484A"
+            android:textSize="17sp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue"
+                android:text="Male"
+                android:textColor="#47484A" />
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue"
+                android:text="Female"
+                android:textColor="#47484A" />
+            <RadioButton
+                android:id="@+id/radioOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/blue"
+                android:text="Other"
+                android:textColor="#47484A" />
+        </RadioGroup>
+
+
+
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="211dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_b2"
+        android:backgroundTint="#f0f0f0"
+        android:drawablePadding="10dp"
+        android:hint="Enter birth place (city)"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineargender" />
+
+    <EditText
+        android:id="@+id/country"
+        android:layout_width="211dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_b2"
+        android:backgroundTint="#f0f0f0"
+        android:drawablePadding="10dp"
+        android:hint="Enter country"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city" />
 
     <TextView
         android:id="@+id/device_id"
@@ -61,11 +198,14 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:text=" SAVe"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/light_blue"
+        android:elevation="5dp"
+        android:text="Done"
+        android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/country" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

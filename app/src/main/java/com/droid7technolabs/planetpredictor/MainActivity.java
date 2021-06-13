@@ -1,27 +1,18 @@
 package com.droid7technolabs.planetpredictor;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.droid7technolabs.planetpredictor.UserDetails.BirthProfileActivity;
 import com.droid7technolabs.planetpredictor.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.tabs.TabItem;
-import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,27 +21,23 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    ImageButton acc;
 
     int counter = 0;
     String sAmount = "295";
     int amount = Math.round(Float.parseFloat(sAmount)*100);
 
-    //TabLayout tabLayout;
-    //TabItem mchat,mcall,mstatus;
-    //ViewPager viewPager;
-    //PagerAdapter pagerAdapter;
+
     androidx.appcompat.widget.Toolbar mtoolbar;
 
 
@@ -68,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        acc = (ImageButton) findViewById(R.id.account);
+        acc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent user = new Intent(com.droid7technolabs.planetpredictor.MainActivity.this, BirthProfileActivity.class);
+                startActivity(user);
+            }
+        });
+
+
         counter = preconfig.loadTotalFromPref(this);
 
 
@@ -77,13 +74,6 @@ public class MainActivity extends AppCompatActivity {
         adapter  = new MessagesAdapter(this,messages);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(adapter);
-
-
-        /*tabLayout=findViewById(R.id.include);
-        mchat=findViewById(R.id.chat);
-        mcall=findViewById(R.id.calls);
-        mstatus=findViewById(R.id.status);
-        viewPager=findViewById(R.id.fragmentcontainer);*/
 
         firebaseFirestore=FirebaseFirestore.getInstance();
         firebaseAuth=FirebaseAuth.getInstance();

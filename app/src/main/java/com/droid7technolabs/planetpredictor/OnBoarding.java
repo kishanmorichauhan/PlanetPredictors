@@ -45,7 +45,7 @@ public class OnBoarding extends AppCompatActivity {
     }
 
     public void skip(View view) {
-        startActivity(new Intent(this, com.droid7technolabs.planetpredictor.Joinas.class));
+        startActivity(new Intent(this, com.droid7technolabs.planetpredictor.UserDetails.BirthProfileActivity.class));
         finish();
     }
 
@@ -97,7 +97,7 @@ public class OnBoarding extends AppCompatActivity {
                 letsGetStarted.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent letsgetstartedintent = new Intent(com.droid7technolabs.planetpredictor.OnBoarding.this, com.droid7technolabs.planetpredictor.Joinas.class);
+                        Intent letsgetstartedintent = new Intent(com.droid7technolabs.planetpredictor.OnBoarding.this, com.droid7technolabs.planetpredictor.UserDetails.BirthProfileActivity.class);
                         startActivity(letsgetstartedintent);
                     }
                 });
