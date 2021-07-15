@@ -68,11 +68,11 @@ public class Navigation2Activity extends AppCompatActivity implements PaymentRes
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        userId = auth.getCurrentUser().getUid();
-
         firestore = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+
+        userId = auth.getCurrentUser().getUid();
 
         //to fetch lifePrediction price
         DocumentReference docRef = firestore.collection("Prices").document("RB1AwI7NHZOsg3Y5IePe9yuZabM2");//admin id
