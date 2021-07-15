@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PlanetPredictor</string>
+    <string name="app_name">Planets Predictors</string>
 
     <!-- Strings for On Boarding Screen -->
 
@@ -19,5 +19,39 @@
     <string name="let_get_started">"Let's Begin"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="description">Planet Predictor</string>
+    <string name="description">Planets Predictors</string>
+    <string name="title_activity_navigation2">Navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="chats">My Astrology</string>
+    <string name="life_prediction">Life Prediction</string>
+    <string name="astrologer">Astrologer</string>
+    <string name="customer_support">Customer Support</string>
+    <string name="how_planet_predictor_works">How Planets Predictors Works</string>
+    <string name="terms_and_condition">Terms and Condition</string>
+    <string name="abou_tife_prediction">Life Prediction is a way to know your full life events with the help of astrological methods. Our Vedic astrologers will make your life prediction based on the knowledge and information you provide.You can order for yourself or someone else.</string>
+    <string name="vedic_tv1">First of all vedic astrology is not a magic.Vedic astrology is combination of MATHS &amp; SCIENCE of karmas. Everything which happens in the world is in god\'s hand only.</string>
+    <string name="vedic_tv2">Vedic astrology is the technique to predict some future events on the basis of natal chart. Natal chart and other divisional charts are nothing but a karma\'s graph of individual. From the divisional and natal chart astrologer can conclude prediction. At last all depends on the karmas only. But vedic astrology is helping hand to predict the future.</string>
+    <string name="vedic_tv3">It is the pure calculation of individual\'s past and present karmas. Also planets\' science needs to be implemented with the karmas calculation. </string>
+    <string name="vedic_tv4"> If compare western astrology then vedic astrology is more accurate. as per my view when mind stops working then vedic astrology can be a proper guidance to each and every single problem in individual\'s life.</string>
+    <string name="terms1">•	The prediction is always based on the data received by us and there may be a variation in prediction in light of the theory of karma related to concern person.</string>
+    <string name="terms2">•	We are not giving any commitment for any prediction given by us will be 100% result oriented.</string>
+    <string name="terms3">•	The base of prediction is always depending on micro mathematics which may be differ from the result of prediction for which we are not liable for any discrepancy and variation in any physical result for any prediction. </string>
+    <string name="terms4">•	Amount paid once should not be refunded in any circumstances.</string>
+    <string name="terms5">•	The reply time to any question is within 48 hours. </string>
+    <string name="terms6">•	Legal complication if any the jurisdiction will be at Rajkot. </string>
+    <string name="terms7">•	If you have any query regarding terms and conditions prior to accepting, please contact Planets Predictors at predictorplanet@gmail.com.</string>
+    <string name="terms8">•	The Planets Predictors services are provided “AS IS” and “AS AVAILABLE” and for entertainment purpose only. </string>
+    <string name="terms9">•	The Planets Predictors makes no representation, warranty, or guarantee regarding the reliability, timeliness, quality, suitability or availability of the planets predictor services. </string>
+    <string name="terms10">• You expressly agree that the entire risk arising out of your use of the planets predictor services, and any service or products requested in connection therewith, remains solely with you.</string>
+    <string name="terms11">Planets Predictors and third parties’ beneficiaries shall not be liable for indirect, special, punitive, exemplary, incidental or consequential damages including without limitation lost profits, lost data, personal damages planets predictor shall not be liable. We will not do any life or death prediction. If customer ask any lifeline or death related question then planets predictors is not liable to answer.</string>
+
 </resources>

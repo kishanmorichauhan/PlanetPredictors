@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation3"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.droid7technolabs.planetpredictor.ui.home.HomeFragment"
+        android:label="@string/chats"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.droid7technolabs.planetpredictor.ui.gallery.GalleryFragment"
+        android:label="@string/life_prediction"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.droid7technolabs.planetpredictor.ui.slideshow.SlideshowFragment"
+        android:label="@string/astrologer"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_customer"
+        android:name="com.droid7technolabs.planetpredictor.Fragment.CustomerSupport"
+        android:label="@string/customer_support"
+        tools:layout="@layout/fragment_customer_support" />
+    <fragment
+        android:id="@+id/nav_how_app_works"
+        android:name="com.droid7technolabs.planetpredictor.Fragment.PlanetWorkFragment"
+        android:label="@string/how_planet_predictor_works"
+        tools:layout="@layout/fragment_planet_work" />
+    <fragment
+        android:id="@+id/nav_terms_condition"
+        android:name="com.droid7technolabs.planetpredictor.Fragment.TermsConditionFragment"
+        android:label="@string/terms_and_condition"
+        tools:layout="@layout/fragment_terms_condition" />
+</navigation>

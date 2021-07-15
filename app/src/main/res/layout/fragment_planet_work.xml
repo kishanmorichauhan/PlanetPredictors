@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.PlanetWorkFragment">
+        <!--
+         <TextView
+             android:id="@+id/app_works"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:background="#DCDCDC"
+             android:padding="5dp"
+             android:text="How Planet Predictor Works"
+             android:textAlignment="center"
+             android:textSize="20dp"
+             android:textStyle="bold"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent"
+             tools:ignore="MissingConstraints" />    -->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/question"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/questionworks"
+        app:civ_border_color="@color/blue"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/qsn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Ask a Question"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/question"
+        app:layout_constraintStart_toEndOf="@+id/question"
+        app:layout_constraintTop_toTopOf="@+id/question"
+        app:layout_constraintVertical_bias="0.575" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/date_show"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/calendar"
+        app:civ_border_color="#4769e1"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question" />
+
+    <TextView
+        android:id="@+id/date_s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Share Birth Details"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/date_show"
+        app:layout_constraintStart_toEndOf="@+id/date_show"
+        app:layout_constraintTop_toTopOf="@+id/date_show"
+        app:layout_constraintVertical_bias="0.545" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ans"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/question1"
+        app:civ_border_color="#4769e1"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_show" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Get your Answers"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserrat"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ans"
+        app:layout_constraintStart_toEndOf="@+id/ans"
+        app:layout_constraintTop_toTopOf="@+id/ans"
+        app:layout_constraintVertical_bias="0.484" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/astro"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/fortunetellerworks"
+        app:civ_border_color="#4769e1"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ans" />
+
+    <TextView
+        android:id="@+id/astrologer"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/montserrat"
+        android:text="An Astrologer will
+        make a Prediction"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/astro"
+        app:layout_constraintStart_toEndOf="@+id/astro"
+        app:layout_constraintTop_toTopOf="@+id/astro"
+        app:layout_constraintVertical_bias="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

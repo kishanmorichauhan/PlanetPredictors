@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/messenger"
+            android:title="@string/chats" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/fortuneteller"
+            android:title="@string/life_prediction" />
+
+    </group>
+
+    <item android:title="About Astrology">
+        <menu>
+            <group android:checkableBehavior="single" >
+
+                <item
+                    android:id="@+id/nav_slideshow"
+                    android:title="@string/astrologer"
+                    android:icon="@drawable/esoteric"/>
+
+            </group>
+        </menu>
+
+    </item>
+
+    <item android:title="Help and Settings">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_customer"
+                    android:title="@string/customer_support"
+                    android:icon="@drawable/email"/>
+                <item
+                    android:id="@+id/nav_how_app_works"
+                    android:title="@string/how_planet_predictor_works"
+                    android:icon="@drawable/request"/>
+
+                <item
+                    android:id="@+id/nav_terms_condition"
+                    android:title="@string/terms_and_condition"
+                    android:icon="@drawable/termsandconditions"/>
+            </group>
+
+        </menu>
+
+    </item>
+
+
+</menu>

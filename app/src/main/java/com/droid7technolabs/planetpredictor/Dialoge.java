@@ -28,13 +28,13 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+//For payment dialogeBox
 public class Dialoge extends AppCompatDialogFragment {
     Context context;
 
     public Dialoge(Context context){
         this.context = context;
     }
-
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -44,6 +44,7 @@ public class Dialoge extends AppCompatDialogFragment {
 
         builder.setView(view)
                 .setTitle("")
+
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

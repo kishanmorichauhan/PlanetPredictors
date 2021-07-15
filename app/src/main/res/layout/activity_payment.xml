@@ -11,7 +11,7 @@
         android:id="@+id/imageView"
         android:layout_width="307dp"
         android:layout_height="284dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/payment"
         android:foregroundGravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="One question to astrologer"
-        android:textColor="#374ECF"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/blue"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -36,12 +37,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/montserrat"
         android:text="Rs. 295"
         android:textColor="@color/blue"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -50,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Planet Predictor- My Astrology"
+        android:text="Planets Predictors- My Astrology"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,13 +62,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="#4A5C9A"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#0D267E"
         android:text="Pay via Razorpay"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc" />
+        app:layout_constraintTop_toBottomOf="@+id/desc"
+        app:layout_constraintVertical_bias="0.361" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,8 @@ package com.droid7technolabs.planetpredictor.UserDetails;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
+//user model class
 public class UserData {
     private String fullname;
     private String dob;
@@ -11,13 +13,16 @@ public class UserData {
     private String time;
     private String city;
     private String country;
+    private String uid;
+    private String state;
+    private String gender;
 
     public UserData()
     {
     }
 
 
-    public UserData(String fullname, String date, String deviceid,String profile_image,String time,String city,String country)
+    public UserData(String fullname, String date, String deviceid,String profile_image,String time,String city,String country,String uid,String state,String gender)
     {
         this.fullname= fullname;
         this.dob= date;
@@ -26,6 +31,10 @@ public class UserData {
         this.time = time;
         this.city = city;
         this.country = country;
+        this.uid = uid;
+        this.state = state;
+        this.gender = gender;
+
 
     }
 
@@ -83,5 +92,29 @@ public class UserData {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

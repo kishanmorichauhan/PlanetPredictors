@@ -1,5 +1,6 @@
 package com.droid7technolabs.planetpredictor;
 
+//message model class
 public class Messages {
 
     String message,messageId;

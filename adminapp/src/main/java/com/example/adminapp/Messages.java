@@ -2,6 +2,8 @@ package com.example.adminapp;
 
 public class Messages {
 
+
+    // Messages class for message details
     String message,messageId;
     String senderId;
     long timestamp;

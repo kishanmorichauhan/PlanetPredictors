@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.droid7technolabs.planetpredictor">
 
+    <!--Permission-->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -10,8 +15,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.PlanetPredictor">
-        <activity android:name=".PaymentActivity"></activity>
+
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".MyVedic"/>
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +28,25 @@
             </intent-filter>
         </activity>
         <activity android:name=".OnBoarding" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".UserDetails.BirthProfileActivity" />
+        <activity
+            android:name=".Navigation2Activity"
+            android:label="@string/title_activity_navigation2"
+            android:theme="@style/Theme.PlanetPredictor.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+        </activity>
+
+        <!--This is for Notification-->
+        <service
+            android:name=".FirebaseMessagingService"
+            android:permission="TODO"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
 
         <meta-data
             android:name="preloaded_fonts"

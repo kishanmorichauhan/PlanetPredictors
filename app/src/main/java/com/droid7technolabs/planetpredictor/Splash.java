@@ -4,17 +4,36 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.droid7technolabs.planetpredictor.UserDetails.BirthProfileActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import java.util.HashMap;
+import java.util.Objects;
 
 public class Splash extends AppCompatActivity {
 
     TextView appname;
-    LottieAnimationView lottie;
+    ImageView logo;
+
+    Animation round;
+    FirebaseAuth auth;
+    FirebaseFirestore firebaseFirestore;
 
     SharedPreferences onBoardingScreen;
 
@@ -24,38 +43,33 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        appname= findViewById(R.id.appname);
-        lottie=findViewById(R.id.lottie);
+        auth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
 
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
-        lottie.animate().translationY(2000).setDuration(2000).setStartDelay(2900);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        appname = findViewById(R.id.appname);
+        logo = findViewById(R.id.appLogo);
+
+        //for logo animation
+        round = AnimationUtils.loadAnimation(this, R.anim.round_anim);
+        logo.setAnimation(round);
+
+        //handler for timing
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                onBoardingScreen = getSharedPreferences("onBoradingScreen",MODE_PRIVATE);
+                onBoardingScreen = getSharedPreferences("onBoradingScreen", MODE_PRIVATE);
 
-                boolean isFirstTime=onBoardingScreen.getBoolean("firstTime",true);
-                if(isFirstTime){
-
-                    SharedPreferences.Editor editor=onBoardingScreen.edit();
-                    editor.putBoolean("firstTime",false);
-                    editor.commit();
-
-                    Intent i = new Intent(getApplicationContext(),OnBoarding.class);
-                    startActivity(i);
-                    finish();
-
-
-                }
-                else{
-                    Intent i = new Intent(getApplicationContext(), BirthProfileActivity.class);
-                    startActivity(i);
-                    finish();
-
-                }
-
+                Intent i = new Intent(getApplicationContext(), OnBoarding.class);
+                startActivity(i);
+                finish();
 
             }
-        }, 5000);
+        }, 3000);
+
     }
 }

@@ -20,12 +20,9 @@
             android:id="@+id/imageView"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:elevation="5dp"
-            android:padding="5dp"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_launcher_background" />
-
+            android:layout_marginTop="5dp"
+            android:padding="4dp"
+            android:src="@drawable/horoscope"/>
         <LinearLayout
             android:id="@+id/linearlayout3"
             android:layout_width="wrap_content"
@@ -33,24 +30,25 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/description"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Planets Predictors"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginLeft="8dp"
+                />
 
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="200dp"
+                android:layout_marginLeft="8dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:text="In-App Purchases"/>
 
         </LinearLayout>
-
 
     </LinearLayout>
 

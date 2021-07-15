@@ -8,7 +8,7 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile"
+        android:id="@+id/img"
         android:layout_margin="4dp"
         android:layout_width="58dp"
         android:layout_height="58dp"
@@ -17,26 +17,26 @@
         android:src="@drawable/profile_image" />
 
     <TextView
-        android:id="@+id/username"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:text="kishan morichauhan"
+        android:text="User"
         android:textColor="@color/black"
         android:layout_marginTop="5dp"
-        android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/profile"
-        app:layout_constraintTop_toTopOf="@+id/profile" />
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@+id/img"
+        app:layout_constraintTop_toTopOf="@+id/img" />
 
     <TextView
-        android:id="@+id/lastMsg"
+        android:id="@+id/specification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tap to chat"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/username"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        android:text="long press to see profile"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/userName"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <View
         android:id="@+id/view"
@@ -46,6 +46,6 @@
         android:background="#CACACA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile" />
+        app:layout_constraintTop_toBottomOf="@+id/img" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

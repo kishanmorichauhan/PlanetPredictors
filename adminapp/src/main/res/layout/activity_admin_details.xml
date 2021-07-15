@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminDetails"
+    tools:context=".Admin.AdminDetails"
     tools:ignore="MissingDefaultResource">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="48dp"
         android:text="Admin Profile"
         android:textColor="@color/blue"
         android:textSize="30sp"
@@ -58,7 +58,7 @@
         android:id="@+id/done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="128dp"
         android:backgroundTint="@color/light_blue"
         android:elevation="5dp"
         android:text="Done"

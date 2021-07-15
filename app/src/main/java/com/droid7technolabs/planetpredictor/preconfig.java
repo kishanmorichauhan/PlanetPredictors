@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 
 public class preconfig {
 
+    //for counter
+
     private static final String MY_PREFERENCE_NAME = "com.example.counter";
     private static final String PREF_TOTAL_KEY = "pref_total_key";
 

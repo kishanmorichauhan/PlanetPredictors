@@ -14,6 +14,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.droid7technolabs.planetpredictor.UserDetails.BirthProfileActivity;
+import com.google.firebase.auth.FirebaseAuth;
+
+//welcome screen
 public class OnBoarding extends AppCompatActivity {
 
     ViewPager viewPager;
@@ -23,12 +27,15 @@ public class OnBoarding extends AppCompatActivity {
     Button letsGetStarted;
     Animation animation;
     int currentPos;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_onboarding);
+
+        getSupportActionBar().hide();
 
         //Hooks
         viewPager = findViewById(R.id.slider);
@@ -42,6 +49,15 @@ public class OnBoarding extends AppCompatActivity {
         //Dots
         addDots(0);
         viewPager.addOnPageChangeListener(changeListener);
+
+        //cheking if user is alredy logged in
+        auth = FirebaseAuth.getInstance();
+
+        if(auth.getCurrentUser() != null){
+            Intent intent = new Intent(OnBoarding.this, Navigation2Activity.class);
+            startActivity(intent);
+            finishAffinity();
+        }
     }
 
     public void skip(View view) {
@@ -53,8 +69,8 @@ public class OnBoarding extends AppCompatActivity {
         viewPager.setCurrentItem(currentPos + 1);
     }
 
-    private void addDots(int position) {
 
+    private void addDots(int position) {
         dots = new TextView[3];
         dotsLayout.removeAllViews();
 
@@ -66,17 +82,20 @@ public class OnBoarding extends AppCompatActivity {
             dotsLayout.addView(dots[i]);
         }
 
+        //set color
         if (dots.length > 0) {
             dots[position].setTextColor(getResources().getColor(R.color.blue));
         }
 
     }
 
+    //
     ViewPager.OnPageChangeListener changeListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
         }
+
 
         @Override
         public void onPageSelected(int position) {
@@ -94,6 +113,7 @@ public class OnBoarding extends AppCompatActivity {
 
                 letsGetStarted = findViewById(R.id.get_started_btn);
 
+                //Intent to birthProfile
                 letsGetStarted.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
