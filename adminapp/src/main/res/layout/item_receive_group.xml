@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="2dp">
 
 
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -21,12 +21,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="7dp"
-            android:paddingTop="7dp"
-            android:paddingRight="40dp"
-            android:paddingBottom="7dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="14dp"
             android:text="Sender Message Display Here "
             android:textColor="@color/black"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
         </TextView>
 
@@ -35,12 +36,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/timeofmessage"
             android:textSize="10sp"
+            android:paddingLeft="7dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="2dp"
             android:layout_toRightOf="@id/sendermessage"
-            android:layout_marginLeft="-40dp"
             android:layout_alignBottom="@id/sendermessage"
-            android:text="20:09"
-            android:padding="7dp"
-            android:textColor="#434343" />
+            android:text="16 Jul,10:48 AM"
+            android:textColor="#434343"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
 
@@ -49,7 +53,7 @@
 
 
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

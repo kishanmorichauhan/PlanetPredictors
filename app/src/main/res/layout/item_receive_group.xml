@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -15,7 +16,7 @@
         app:civ_border_width="1dp"/>
 
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
@@ -29,30 +30,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="7dp"
-            android:paddingTop="5dp"
-            android:paddingRight="40dp"
-            android:paddingBottom="5dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="14dp"
             android:text="Sender Message Display Here "
             android:textColor="@color/black"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
         </TextView>
 
 
         <TextView
+            android:id="@+id/timeofmessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/timeofmessage"
-            android:textSize="10sp"
-            android:layout_toRightOf="@id/sendermessage"
-            android:layout_marginLeft="-40dp"
             android:layout_alignBottom="@id/sendermessage"
-            android:text="20:09"
-            android:padding="7dp"
-            android:textColor="#434343" />
+            android:layout_toRightOf="@id/sendermessage"
+            android:text="16 Jul,10:48 AM"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="2dp"
+            android:textColor="#434343"
+            android:textSize="10sp"
+            android:paddingLeft="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/adminName"
