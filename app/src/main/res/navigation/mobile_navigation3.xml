@@ -37,4 +37,9 @@
         android:name="com.droid7technolabs.planetpredictor.Fragment.TermsConditionFragment"
         android:label="@string/terms_and_condition"
         tools:layout="@layout/fragment_terms_condition" />
+    <fragment
+        android:id="@+id/nav_about_us"
+        android:name="com.droid7technolabs.planetpredictor.Fragment.About_us"
+        android:label="About us"
+        tools:layout="@layout/fragment_about_us" />
 </navigation>

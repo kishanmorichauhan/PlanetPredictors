@@ -46,6 +46,11 @@
                     android:id="@+id/nav_terms_condition"
                     android:title="@string/terms_and_condition"
                     android:icon="@drawable/termsandconditions"/>
+
+                <item
+                    android:id="@+id/nav_about_us"
+                    android:title="About us"
+                    android:icon="@drawable/abotus"/>
             </group>
 
         </menu>

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/prediction_img"
@@ -20,9 +23,12 @@
 
     <TextView
         android:id="@+id/lifetime_txt"
-        android:layout_width="319dp"
-        android:layout_height="89dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:paddingLeft="5dp"
         android:text="@string/abou_tife_prediction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,11 +80,11 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="215dp"
-                android:layout_height="51dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="30dp"
                 android:textColor="@color/black"
-                android:text="The analysis is done based on the experience of Vedic astrologers and your information."
+                android:text="The analysis will be done on the basis of experiences of vedic astrologers and the information you will provide."
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.16"
                 app:layout_constraintStart_toEndOf="@+id/img_tick"
@@ -98,9 +104,9 @@
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="208dp"
-                android:layout_height="58dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Results are verified by independent methods and explained."
+                android:text="Prediction will be given on the basis of analysis of your all divisional charts."
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textColor="@color/black"
                 app:layout_constraintHorizontal_bias="0.619"
@@ -120,4 +126,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
