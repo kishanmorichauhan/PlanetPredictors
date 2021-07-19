@@ -1,5 +1,6 @@
 package com.example.adminapp.Admin;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ public class AdminDetails extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore firestore;
     FirebaseStorage storage;
+    ProgressDialog progressDialog;
 
     String userId;
 
@@ -46,6 +48,10 @@ public class AdminDetails extends AppCompatActivity {
         done = findViewById(R.id.done);
 
         getSupportActionBar().hide();
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.setCancelable(false);
 
         mAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
@@ -72,7 +78,7 @@ public class AdminDetails extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                progressDialog.show();
                 if(selectedImage!=null){
                     StorageReference reference = storage.getReference().child("AdminImage").child(mAuth.getUid());
                     reference.putFile(selectedImage).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
@@ -82,12 +88,12 @@ public class AdminDetails extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     String imageUrl = uri.toString();
-
                                     String uid = mAuth.getUid();
                                     String name = admin_name.getText().toString();
 
                                     //validation
                                     if (name.matches("")) {
+                                        progressDialog.dismiss();
                                         Toast.makeText(AdminDetails.this, "You didn't enter a Admin name", Toast.LENGTH_SHORT).show();
                                         admin_name.setError("Enter Admin Name");
                                         return;
@@ -99,6 +105,7 @@ public class AdminDetails extends AppCompatActivity {
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void aVoid) {
+                                                    progressDialog.dismiss();
                                                     Toast.makeText(AdminDetails.this, "Profile Updated", Toast.LENGTH_LONG).show();
                                                     Intent main = new Intent(AdminDetails.this, Dashboard.class);
                                                     startActivity(main);
@@ -107,6 +114,7 @@ public class AdminDetails extends AppCompatActivity {
                                             }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
+                                            progressDialog.dismiss();
                                             Toast.makeText(AdminDetails.this, " Failure:" + e.getMessage(), Toast.LENGTH_LONG).show();
                                         }
                                     });
@@ -121,6 +129,7 @@ public class AdminDetails extends AppCompatActivity {
                     //if no image selected then execute this code
                     String name = admin_name.getText().toString();
                     if (name.matches("")) {
+                        progressDialog.dismiss();
                         Toast.makeText(AdminDetails.this, "You didn't enter a Admin name", Toast.LENGTH_SHORT).show();
                         admin_name.setError("Enter Admin Name");
                         return;
@@ -133,6 +142,7 @@ public class AdminDetails extends AppCompatActivity {
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
+                                    progressDialog.dismiss();
                                     Toast.makeText(AdminDetails.this, "Profile Updated", Toast.LENGTH_LONG).show();
                                     Intent main = new Intent(AdminDetails.this, Dashboard.class);
                                     startActivity(main);
@@ -141,6 +151,7 @@ public class AdminDetails extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+                            progressDialog.dismiss();
                             Toast.makeText(AdminDetails.this, " Failure:" + e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
