@@ -69,7 +69,7 @@ public class CustomerSupport extends Fragment {
 
                 //Email intent
                 Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto", "predictorplanet@gmail.com", null));
+                        "mailto", "planetspredictors@gmail.com", null));
                 intent.putExtra(Intent.EXTRA_SUBJECT, "");
                 startActivity(Intent.createChooser(intent, "Choose an Email client :"));
 
@@ -86,7 +86,7 @@ public class CustomerSupport extends Fragment {
 
         //Email intent
         Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                "mailto", "predictorplanet@gmail.com", null));
+                "mailto", "planetspredictors@gmail.com", null));
         intent.putExtra(Intent.EXTRA_SUBJECT, "");
         startActivity(Intent.createChooser(intent, "Choose an Email client :"));
     }

@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment {
     Date date = new Date();
     DateFormat df = new SimpleDateFormat("d MMM,h:mm a");
     String date1 = df.format(Calendar.getInstance().getTime());
-    Messages wlcMsg = new Messages("Welcome to Planets Predictors!  Thanks for using the application. Now you can ask your question. 1st question will be free.", adminid, date.getTime(), "");
+    Messages wlcMsg = new Messages("Welcome to Planets Predictors! Thanks for using this application. After taking consultation you will start believing in vedic astrology. You can ask your question here.", adminid, date.getTime(), "");
     Messages wlcMsg2 = new Messages("Thank you! One of our astrologers will contact you within 24 hours.", adminid, date.getTime(), "");
 
     //for notification
@@ -297,7 +297,7 @@ public class HomeFragment extends Fragment {
                 binding.messageBox.setText(binding.messageBox.getText().toString());
 
 
-                if (counter >= 2) {
+                if (counter >= 1) {
                     //open payment dialogBox
                     openDiloge();
                 } else {
